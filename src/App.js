@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import UserCard from "./components/UserCard";
+
+// App.js
+import React from 'react';
+
+const users = [
+  { name: "Андрій", age: 25, city: "Київ" },
+  { name: "Ольга", age: 30, city: "Львів" },
+  { name: "Максим", age: 22, city: "Одеса" }
+];
 
 function App() {
+  const handleGreet = (name) => {
+    alert(`Привіт, ${name}!`);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {users.map((user, index) => (
+        <UserCard
+          key={index}
+          {...user}
+          onGreet={() => handleGreet(user.name)}
+        />
+      ))}
     </div>
   );
 }

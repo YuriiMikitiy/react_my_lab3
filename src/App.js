@@ -3,24 +3,25 @@ import UserCard from "./components/UserCard";
 // App.js
 import React from 'react';
 
-const users = [
-  { name: "Андрій", age: 25, city: "Київ" },
-  { name: "Ольга", age: 30, city: "Львів" },
-  { name: "Максим", age: 22, city: "Одеса" }
+const bookingFilds = [
+  { title: "Карпати", type: "Tennis", addres: "вул. Декабристів 45а", city: "Івано-Франківськ" },
+  { title: "НАУКА СПОРТ ", type: "Futboll Fild", addres: "бульвар Академіка Вернадського 32", city: "Київ" },
+  { title: "MSA", type: "Tennis", addres: "вул. Хмельницького 51а ", city: "Івано-Франківськ" },
+  { title: "GYMMAXX", type: "Futboll Fild", addres: "вул. Драгомирова, 9А", city: "Київ" }
 ];
 
 function App() {
   const handleGreet = (name) => {
-    alert(`Привіт, ${name}!`);
+    alert(`Заброньовано, ${name}!`);
   };
 
   return (
     <div>
-      {users.map((user, index) => (
+      {bookingFilds.map((bookingFild, index) => (
         <UserCard
           key={index}
-          {...user}
-          onGreet={() => handleGreet(user.name)}
+          {...bookingFild}
+          onGreet={() => handleGreet(bookingFild.title)}
         />
       ))}
     </div>

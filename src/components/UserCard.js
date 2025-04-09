@@ -2,15 +2,17 @@
 import React from 'react';
 import './UserCard';
 
-function UserCard({ name, age, city, onGreet }) {
+function UserCard({ title, type, addres, city, onGreet }) {
   return (
     <div className="user-card">
-      <h2>{name}</h2>
-      <p>Вік: {age}</p>
+      <h2>{title}</h2>
+      <p>Тип: {type}</p>
       <p>Місто: {city}</p>
-      <button onClick={onGreet}>Показати вітання</button>
+      <p>Адресса: {addres}</p>
+      <button onClick={onGreet}>Забронювати</button>
     </div>
   );
 }
 
 export default UserCard;
+
